@@ -58,21 +58,6 @@ taskflow-integrated/
 
 ## Setup
 
-### 1. Backend
-
-Open a terminal:
-
-```powershell
-cd backend
-npm install
-```
-
-Copy `.env.example` to `.env`, then set your own MongoDB URI and a long random JWT secret.
-
-```powershell
-Copy-Item .env.example .env
-```
-
 Start the backend:
 
 ```powershell
@@ -81,15 +66,7 @@ npm run dev
 
 The API runs at `http://localhost:5000`.
 
-### 2. Frontend
 
-Open a second terminal:
-
-```powershell
-cd frontend
-npm install
-npm run dev
-```
 
 Open the Vite URL shown in the terminal, normally `http://localhost:5173`.
 
