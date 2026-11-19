@@ -1,0 +1,132 @@
+<<<<<<< HEAD
+# TaskFlow – Personal Task Manager
+
+## Stack
+- Frontend: React, Vite, Tailwind CSS 4, React Router, Axios
+- Backend: Node.js, Express, MongoDB, Mongoose, JWT, HTTP-only cookies, bcryptjs
+
+## Project structure
+
+```text
+taskflow-integrated/
+├── backend/
+│   ├── config/
+│   │   ├── db.js
+│   │   └── token.js
+│   ├── controllers/
+│   │   ├── auth.controller.js
+│   │   └── task.controller.js
+│   ├── middleware/
+│   │   └── auth.middleware.js
+│   ├── models/
+│   │   ├── user.model.js
+│   │   └── task.model.js
+│   ├── routes/
+│   │   ├── auth.routes.js
+│   │   └── task.routes.js
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── index.js
+│   └── package.json
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   │   ├── ProtectedRoute.jsx
+    │   │   ├── PublicRoute.jsx
+    │   │   ├── TaskCard.jsx
+    │   │   └── TaskForm.jsx
+    │   ├── context/
+    │   │   └── UserContext.jsx
+    │   ├── pages/
+    │   │   ├── Dashboard.jsx
+    │   │   ├── Login.jsx
+    │   │   └── SignUp.jsx
+    │   ├── services/
+    │   │   └── api.js
+    │   ├── App.jsx
+    │   ├── App.css
+    │   ├── index.css
+    │   └── main.jsx
+    ├── .gitignore
+    ├── index.html
+    ├── package.json
+    └── vite.config.js
+```
+
+## Requirements
+- Node.js 22 or newer recommended
+- MongoDB local service or MongoDB Atlas connection string
+
+## Setup
+
+### 1. Backend
+
+Open a terminal:
+
+```powershell
+cd backend
+npm install
+```
+
+Copy `.env.example` to `.env`, then set your own MongoDB URI and a long random JWT secret.
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Start the backend:
+
+```powershell
+npm run dev
+```
+
+The API runs at `http://localhost:5000`.
+
+### 2. Frontend
+
+Open a second terminal:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Open the Vite URL shown in the terminal, normally `http://localhost:5173`.
+
+## Environment variables
+
+`backend/.env`:
+
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/task
+JWT_SECRET=replace_with_a_long_random_secret
+CLIENT_URL=http://localhost:5173
+NODE_ENV=development
+```
+
+Never commit `.env` to Git.
+
+## API endpoints
+
+### Authentication
+- `POST /api/signup`
+- `POST /api/login`
+- `POST /api/logout`
+- `GET /api/me`
+
+### Tasks (all require authentication)
+- `POST /api/tasks`
+- `GET /api/tasks`
+- `GET /api/tasks/:id`
+- `PUT /api/tasks/:id`
+- `PATCH /api/tasks/:id/status`
+- `DELETE /api/tasks/:id`
+
+Task queries always include the authenticated user's ID. The frontend never chooses the owner ID.
+
+=======
+# task-manager
+>>>>>>> d988eafb3564c808d8ffeeea39e43c908bde5a30
+
